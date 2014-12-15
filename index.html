@@ -1,0 +1,38 @@
+<!doctype html>
+<html data-ng-app="customersApp">
+    <head>
+        <title>Customers/Orders AngularJS App</title>
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+        <link href="css/styles.css" rel="stylesheet" type="text/css" />
+        <link href="css/animation.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-default">
+                <ul class="nav navbar-nav">
+                    <li><a href="#/customers">Customers</a></li>
+                    <li><a href="#/orders">Orders</a></li>
+                    <li><a href="#/users">Users</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <!-- PlaceHolder Div for another views -->
+        <main>
+            <div class="container slide-animation" data-ng-view=""></div>
+        </main>
+        
+        <!-- Scripts at bottom for faster loading -->
+        <script src="js/angularjs/angular.js"></script>
+        <script src="js/angularjs/angular-route.js"></script>
+        <script src="js/angularjs/angular-animate.js"></script>
+        <script src="app/app.js"></script>
+        <script src="app/controllers/customers.js"></script>
+        <script src="app/controllers/orders.js"></script>
+        <script src="app/controllers/users.js"></script>
+        <script src="app/controllers/allOrders.js"></script>
+        <script src="app/services/customersFactory.js"></script>
+        <script src="app/services/usersFactory.js"></script>
+        <script src="app/services/values.js"></script>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+body {
+/*
+    background: #EAEAEA;
+*/
+}
+
+#customTable {
+    border-left: #ccc;
+    border-top: #ccc;
+}
+
+#customTable td, th {
+    border-right: #ccc;
+    border-bottom: #ccc;
+}
+
+#customTable th {
+    background: #333666;
+    color: #FFF;
+    font-weight: normal;
+    text-decoration: underline;
+    cursor: pointer;
+}

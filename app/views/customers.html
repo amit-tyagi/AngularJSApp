@@ -1,0 +1,28 @@
+<h2>{{ appSettings.title }}</h2>
+<strong>Filter (by name):</strong><br/> 
+<input type="text" data-ng-model="customerFilter.name" size="30"/>
+<br/><br/>
+<table class="table table-striped">
+    <tr>
+        <th data-ng-click="doSort('customerId')">ID</th>
+        <th data-ng-click="doSort('name')">Name</th>
+        <th data-ng-click="doSort('city')">City</th>
+        <th data-ng-click="doSort('orderTotal')">Order Total</th>
+        <th data-ng-click="doSort('joined')">Joined</th>
+        <th></th>
+    </tr>
+    <tr data-ng-repeat="cust in customers | filter:customerFilter | orderBy:sortBy:reverse" class="repeat-animation">
+        <td>{{ cust.customerId }}</td>
+        <td>{{ cust.name | uppercase }}</td>
+        <td>{{ cust.city | lowercase }}</td>
+        <td>{{ cust.orderTotal | currency }}</td>
+        <td>{{ cust.joined | date:'mediumDate' }}</td>
+        <td><a href="#/orders/{{ cust.customerId }}">View Orders</a></td>
+    </tr>
+</table>
+<br/>
+<span>Total Customers: {{ customers.length }}</span>
+<br/><br/>
+<footer>
+    Version: {{ appSettings.version }}
+</footer>

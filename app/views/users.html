@@ -1,0 +1,25 @@
+<h2>Users List</h2>
+
+<strong>Filter (by name):</strong><br/> 
+<input type="text" data-ng-model="userFilter.firstName" size="30"/>
+<br/><br/>
+<table class="table table-striped">
+    <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>User Name</th>
+        <th>Email</th>
+        <th>Created On</th>
+    </tr>
+    <tr data-ng-repeat="user in users | filter:userFilter | orderBy:userId" class="repeat-animation">
+        <td>{{ user.userId }}</td>
+        <td>{{ user.firstName }}</td>
+        <td>{{ user.lastName }}</td>
+        <td>{{ user.userName }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.createdTs | date:'MM/dd/yyyy hh:mm:ss a' }}</td>
+    </tr>
+</table>
+<br/>
+<span>Total Users: {{ users.length }}</span>

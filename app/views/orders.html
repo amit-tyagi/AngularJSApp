@@ -1,0 +1,16 @@
+<h2>{{selectedCustomer.name }}'s Order</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>ID</th>
+        <th>Product Name</th>
+        <th>Total</th>
+    </tr>
+    <tr data-ng-repeat="order in selectedCustomer.orders">
+        <td>{{ order.orderId }}</td>
+        <td>{{ order.productName }}</td>
+        <td>{{ order.total | currency }}</td>
+    </tr>
+</table>
+<br/>
+<span>Total Products: {{ selectedCustomer.orders.length }}</span>
